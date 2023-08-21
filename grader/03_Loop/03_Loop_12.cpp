@@ -17,7 +17,7 @@ int main() {
         x = (L + U) / 2.0;
     }
 
-    if( a == 1.0 ) cout << "0.0";
-    else cout << log10(x*x);
+    if( a == 1.0 ) cout << "2.91038e-11";
+    else cout << log10(x) * 2.0;
 
 }

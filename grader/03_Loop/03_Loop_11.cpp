@@ -17,7 +17,5 @@ int main() {
     }
 
     if(cnt == 0) cout << "No Data";
-    else {
-        cout << round((sum/cnt) * 100) / 100;
-    }
+    else cout << round((sum/cnt)*100) / 100;
 }

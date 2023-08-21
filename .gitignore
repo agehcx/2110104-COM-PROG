@@ -6,8 +6,12 @@
 *.code-workspace
 
 .history/
+.DS_Store
+
+tempCodeRunnerFile.cpp
 
 *.json
 *.exe
 *.pdf
 *.prob
+*.tmp

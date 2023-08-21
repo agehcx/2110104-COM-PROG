@@ -20,8 +20,3 @@ int main() {
 
     cout << cnt;
 }
-
-/*
-ABC
-("ABC aABC AABC ABCAB CABC d ABC k abc ABC" kjdk abc asd 'ABC ajdsABCkjas  ABC' ABC abc ABC ABC ABC ABCABC...ABC
-*/
