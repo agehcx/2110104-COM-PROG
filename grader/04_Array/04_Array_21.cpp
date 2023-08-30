@@ -6,10 +6,9 @@ int main() {
     cin.tie(nullptr);
 
     int N; cin >> N;
-    long double cnt = 0, arr[N], Memo[N];
+    long double cnt = 0, arr[N];
     for(auto& e : arr) cin >> e;
     
-    for(int i = 0; i < N; i++) Memo[i] = 0;
     for(int i = 0; i < N; i++) {
         long double tmp, prev;
         if(i == 0) {

@@ -25,9 +25,8 @@ int main() {
     string arr[N];
     for(int i = 0; i < N; i++) cin >> arr[i];
     cin.ignore();
-    string order = "";
-    string SEQ, dummy;
-    getline(std::cin, SEQ);
+    string order = "", SEQ;
+    getline(cin, SEQ);
     for(auto& e : SEQ) if(e == 'C' || e == 'S') {order += e;}
     for(char c : order) {
         if(c == 'C') Cut(arr, N);

@@ -2,73 +2,41 @@
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    int l[2003], r[2003];
-
-    int cnt = 0;
-
-    while(true) {
-        int lvalue, rvalue;
-        cin >> lvalue;
-        
-        if( lvalue != -999 && lvalue != -998 ) {
-            cin >> rvalue;
-
-            l[cnt] = lvalue;
-            r[cnt] = rvalue;
-
-            cnt ++;
-        }
-
-        else {
-            int redline[cnt], blueline[cnt]; 
-            int minred = 2147483647, maxblue = -2147483647;
-
-            if( lvalue == -999 ) {// Zag-Zig
-                for(int i=0; i<cnt; i++) {
-                    if( i%2==0 ) {
-                        redline[i] = r[i];
-                        blueline[i] = l[i];
+    const int N = 1e3+5;
+    int l[N], r[N], cnt = 0;
+    int mx = INT_MIN, mn = INT_MAX;
+    for(int i = 0; i < N; i++) {
+        cin >> l[i];
+        if(l[i] == -998 || l[i] == -999) {
+            if(l[i] == -998) {
+                for(int i = 0; i < cnt; i++) {
+                    if((i+1) & 1) {
+                        mx = max(mx, r[i]);
+                        mn = min(mn, l[i]);
                     }
                     else {
-                        redline[i] = l[i];
-                        blueline[i] = r[i];
+                        mx = max(mx, l[i]);
+                        mn = min(mn, r[i]);
                     }
                 }
-
-                for(int i=0; i<cnt; i++) {
-                    minred = min(minred, redline[i]);
-                    maxblue = max(maxblue, blueline[i]);
-                }
-
-                cout << minred << ' ' << maxblue;
-                
-                break;
-            }
-
-            else { // Zig-Zag
-                for(int i=0; i<cnt; i++) {
-                    if( i%2==0 ) {
-                        redline[i] = l[i];
-                        blueline[i] = r[i];
+                cout << mn << ' ' << mx;
+            } else {
+                for(int i = 0; i < cnt; i++) {
+                    if((i+1) & 1) {
+                        mx = max(mx, l[i]);
+                        mn = min(mn, r[i]);
                     }
                     else {
-                        redline[i] = r[i];
-                        blueline[i] = l[i];
+                        mx = max(mx, r[i]);
+                        mn = min(mn, l[i]);
                     }
                 }
-
-                for(int i=0; i<cnt; i++) {
-                    minred = min(minred, redline[i]);
-                    maxblue = max(maxblue, blueline[i]);
-                }
-
-                cout << minred << ' ' << maxblue;
-                
-                break;
+                cout << mn << ' ' << mx;
             }
+            return 0;
+        } else {
+            cin >> r[i];
+            cnt++;
         }
     }
 }
