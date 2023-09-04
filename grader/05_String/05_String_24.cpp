@@ -27,7 +27,7 @@ int main() {
     chk = false;
     for(int i = 0; i < splitted[sp-1].size(); i++) {
         if(vowels.find(splitted[sp-1][i])==string::npos && !chk) {
-            lW += splitted[sp-1][i
+            lW += splitted[sp-1][i];
             if(i < splitted[sp-1].size() - 1) if(vowels.find(splitted[sp-1][i+1])!=string::npos) chk = true;
         }
         else lV += splitted[sp-1][i];
