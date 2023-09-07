@@ -43,7 +43,10 @@ int main() {
     for(auto it = vec.begin(); it != vec.end(); it++) {
         cout << *it;
         if (it != vec.end() - 1) {
-            cout << ", ";
+            string s = ",";
+            // s += '\0';
+            s += " ";
+            cout << string(s);
         }
     }
     cout << ']';
