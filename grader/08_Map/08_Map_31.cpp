@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool cmp1(tuple<long long,double,string,string,string,string> x, tuple<long long,double,string,string,string,string> y) {
+bool cmp1(tuple<long long, double, string, string, string, string> x, tuple<long long, double, string, string, string, string> y) {
     return get<1>(x) > get<1>(y);
 }
 
