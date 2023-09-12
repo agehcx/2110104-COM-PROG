@@ -16,7 +16,7 @@ int main() {
         cin >> dep >> amount;
         mp[dep] += amount;
     }
-    vector<tuple<long long,double,string,string,string,string>> vec;
+    vector<tuple<long long, double, string, string, string, string>> vec;
     int Mem; cin >> Mem;
     for(int i = 0; i < Mem; i++) {
         long long id;
@@ -26,7 +26,7 @@ int main() {
         for(int j = 0; j < 4; j++) {
             cin >> fc[j];
         }
-        vec.push_back(make_tuple(id,score,fc[0],fc[1],fc[2],fc[3]));
+        vec.emplace_back(make_tuple(id,score,fc[0],fc[1],fc[2],fc[3]));
     }
     sort(vec.begin(),vec.end(),cmp1);
     vector<pair<long long,string>> ans;
@@ -45,6 +45,6 @@ int main() {
             ans.emplace_back(make_pair(a,f));
         }
     }
-    sort(ans.begin(),ans.end(),less<pair<long long,string>>());
+    sort(ans.begin(),ans.end(),less<pair<long long, string>>());
     for(auto & [a,b] : ans) cout << a << ' ' << b << '\n';
 }
